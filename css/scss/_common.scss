@@ -1,0 +1,321 @@
+@import url('./reset.css');
+@import "_mixin";
+
+header {
+    .head-pc {
+        padding: 10px 30px;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        font-weight: 700;
+        position: relative;
+
+        :nth-child(1) {
+            img {
+                width: 100%;
+            }
+        }
+
+        :nth-child(2) {
+            p {
+                font-size: 2.25rem;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                a {
+                    margin: 0 15px;
+                }
+            }
+        }
+
+        // :nth-child(3) {
+
+        // }
+    }
+
+    .head-mobile {
+        display: none;
+    }
+}
+
+footer {
+    .foot-pc {
+        .customer {
+            background-color: #D9D9D9;
+
+            p {
+                height: 70px;
+                display: flex;
+                align-items: center;
+                margin: 0 8%;
+
+                font-size: 0.87rem;
+                font-weight: 700;
+
+                a {
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        .info {
+
+            margin: 30px 8%;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+
+            .company {
+                font-size: 0.75rem;
+
+                :nth-child(1) {
+                    font-size: 0.87rem;
+                    font-weight: 700;
+                }
+            }
+
+            .sns {
+                display: flex;
+
+                p {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 100%;
+                    background-color: #D9D9D9;
+                    position: relative;
+                    margin: 0 5px;
+
+                    img {
+                        padding: 8px;
+                        width: 100%;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .foot-mobile {
+        display: none;
+    }
+}
+
+@include res($mobile) {
+    header {
+        .head-pc {
+            display: none;
+        }
+
+        .head-mobile {
+            display: block;
+            padding: 10px 10px;
+            font-weight: 700;
+
+            @include flex(space-between) {
+                align-items: center;
+            }
+
+            .in-search {
+                display: none;
+
+                .searchText {
+                    height: 25px;
+                    font-size: 0.75rem;
+                    border: 0;
+                    border-radius: 15px;
+                    outline: none;
+                    padding-left: 10px;
+                    background-color: rgb(233, 233, 233);
+                }
+
+                .searchBtn {
+                    width: 60px;
+                    height: 24px;
+                    border-radius: 10px;
+                    border: 1px solid #bbbbbb;
+                    background: linear-gradient(90deg, #ffffff, #eeeeee);
+                }
+
+                .searchBtn:hover {
+                    color: white;
+                    border: 1px solid #fad961;
+                    background: radial-gradient(farthest-side at 30% 30%, #fad961, #f8ac44, #f77a25);
+                }
+
+                .searchBtn:active {
+                    border: 1px solid #fad961;
+                    background: linear-gradient(90deg, #fad961, #f8ac44);
+                }
+            }
+
+            .toggle img {
+                cursor: pointer;
+            }
+
+            .toggle nav {
+                // display: none;
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: 65%;
+                height: 100%;
+                font-weight: normal;
+                background-color: white;
+                padding: 1% 5%;
+                transform: translateX(100%);
+                transition: 1s;
+
+                .close {
+                    margin: 5% auto;
+                    cursor: pointer;
+                }
+
+                .info {
+                    border-bottom: 1px dotted black;
+                    padding: 10px 0;
+                    margin: 8% 0;
+                }
+
+                li {
+                    margin: 3% auto;
+                    cursor: pointer;
+                }
+            }
+
+            .toggle nav.active {
+                transform: translateX(0%);
+            }
+        }
+
+        .collection {
+            background-color: #000000;
+
+            .toggle nav {
+                background-color: black;
+
+                .info {
+                    color: white;
+                    border-bottom: 1px dotted white;
+                    padding: 10px 0;
+                }
+
+                li {
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .foot-pc {
+            display: none;
+        }
+
+        .foot-mobile {
+            display: block;
+            padding: 10px 10px;
+            background-color: #D9D9D9;
+
+            @include flex(center) {
+                align-items: center;
+            }
+
+            div {
+                p {
+                    text-align: center;
+                    font-size: 0.75rem;
+
+                    span {
+                        font-size: 0.87rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .collection {
+            background-color: white;
+        }
+    }
+}
+
+@include res($pad) {
+    header {
+        .head-pc {
+            margin: 0 auto;
+            height: 120px;
+
+            @include flex(inline-flex) {
+                align-self: center;
+            }
+
+            :nth-child(1) {
+                img {
+                    width: 50%;
+                }
+            }
+
+            :nth-child(2) {
+                p {
+                    font-size: 1.25rem;
+                    margin-bottom: 5px;
+                }
+
+                nav {
+                    a {
+                        margin: 0 2px;
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+
+    }
+
+    footer {
+        .foot-pc {
+            .customer {
+                p {
+                    font-size: 0.7rem;
+
+                    a {
+                        margin: 0 8px;
+                    }
+                }
+            }
+
+            .info {
+                .company {
+                    font-size: 0.6rem;
+
+                    :nth-child(1) {
+                        font-size: 0.7rem;
+                    }
+                }
+
+                .sns {
+                    @include flex(inline-flex);
+
+                    p {
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 3px;
+
+                        img {
+                            padding: 9px;
+                            width: 100%;
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}

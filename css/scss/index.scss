@@ -1,0 +1,171 @@
+@import "_common";
+
+main {
+    padding: 10% 8% 3%;
+
+    article {
+        text-align: center;
+
+        p {
+            font-size: 1.87rem;
+            font-weight: 700;
+        }
+
+        .contents-mp {
+            display: none;
+        }
+
+        .contents {
+            margin: 3% 0 10%;
+
+            @include flex(space-between) {}
+
+            gap: 1%;
+
+            div {
+                figure {
+                    margin: 3% 0 0 0;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        transition: 0.5s;
+                    }
+                }
+
+                &:hover figure img {
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}
+
+@include res($mobile) {
+
+    section {
+        figure {
+            overflow: hidden;
+
+            @include flex (center) {
+                align-items: center;
+            }
+        }
+    }
+
+    main {
+        article {
+            p {
+                font-size: 1rem;
+            }
+
+            .contents {
+                display: none;
+            }
+
+            .contents-mp {
+                display: block;
+
+                // pointer-events: none;
+                @include flex (center) {
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                figure {
+                    margin: 3% 0 8% 0;
+                    overflow: hidden;
+
+                    img {
+                        margin: 1% 0;
+                        width: 85vw;
+                    }
+                }
+            }
+        }
+
+        aside {
+            position: fixed;
+            right: 9%;
+            bottom: 15%;
+            border-radius: 100%;
+            opacity: 0;
+            transition: 0.5s;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+            }
+        }
+
+        aside.active {
+            opacity: 1;
+        }
+    }
+}
+
+@include res($pad) {
+    section {
+        figure {
+            overflow: hidden;
+
+            @include flex (center) {
+                align-items: center;
+            }
+        }
+    }
+
+    main {
+        padding: 7% 5% 4%;
+
+        article {
+            p {
+                font-size: 1.25rem;
+            }
+
+            .contents {
+                display: none;
+            }
+
+            .contents-mp {
+                display: block;
+
+                @include flex (center) {
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                figure {
+                    margin: 3% 0 8% 0;
+                    overflow: hidden;
+
+                    img {
+                        margin: 1% 0;
+                        width: 90vw;
+                    }
+                }
+            }
+        }
+
+        aside {
+            position: fixed;
+            right: 5.5%;
+            bottom: 37%;
+            border-radius: 100%;
+            opacity: 0;
+            transition: 0.5s;
+            cursor: pointer;
+
+            img {
+                border-radius: 100%;
+            }
+
+        }
+
+        aside.active {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,322 @@
+@import "_common";
+
+section {
+    margin: 0 3%;
+
+    figure {
+        img {
+            width: 100%;
+        }
+
+        figcaption {
+            margin: 3% 0 8% 0;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+    }
+}
+
+main {
+    .story {
+        display: none;
+    }
+
+    .art-1 {
+        padding: 8% 8%;
+
+        @include flex(space-between) {}
+
+        gap: 2%;
+
+        .picture {
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .explain {
+            :nth-child(1) {
+                font-size: 1.87rem;
+                font-weight: 700;
+            }
+
+            :nth-child(2) {
+                color: #808080;
+                font-size: 1.25rem;
+            }
+
+            :nth-child(3) {
+                color: #808080;
+                font-size: 1rem;
+            }
+        }
+
+        .explain-p {
+            display: none;
+        }
+
+    }
+
+    .art-2 {
+        padding: 8% 8%;
+
+        .subject {
+            font-size: 1.87rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .context-p {
+            display: none;
+        }
+
+        .context {
+            margin: 3% auto;
+
+            @include flex(space-between) {}
+
+            gap: 2%;
+
+            figcaption {
+                text-align: start;
+                padding: 0 1%;
+
+                .title {
+                    margin: 3% auto;
+                    font-size: 1.25rem;
+                }
+
+                .desc {
+                    color: #808080;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .context-m {
+            display: none;
+        }
+    }
+}
+
+@include res($mobile) {
+    section {
+        display: none;
+    }
+
+    main {
+        .story {
+            display: block;
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 6%;
+        }
+
+        .art-1 {
+            @include flex(center) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .explain {
+                display: none;
+            }
+
+            .explain-p {
+                display: block;
+                margin: 4% 0;
+
+                :nth-child(1) {
+                    margin-bottom: 1.5%;
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+
+                :nth-child(2) {
+                    margin-bottom: 1.5%;
+                    color: #808080;
+                    font-size: 0.7rem;
+                }
+
+                :nth-child(3) {
+                    color: #808080;
+                    font-size: 0.6rem;
+                }
+            }
+        }
+
+        .art-2 {
+            .subject {
+                font-size: 1rem;
+                font-weight: 700;
+                text-align: start;
+                margin-bottom: 3%;
+            }
+
+            .context {
+                display: none;
+            }
+
+            .context-m {
+                display: block;
+
+                @include flex(inline-flex) {
+                    align-items: center;
+                }
+
+                gap:1%;
+
+                .img-l {
+                    height: 178px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .img-r {
+                    height: 178px;
+
+                    :nth-child(1) {
+                        height: 88px;
+                        margin-bottom: 2px;
+
+                        img {
+                            width: 100%;
+
+                        }
+                    }
+
+                    :nth-child(2) {
+                        height: 88px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@include res($pad) {
+    section {
+        figure {
+            figcaption {
+                text-align: center;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    main {
+        .story {
+            display: none;
+        }
+
+        .art-1 {
+            padding: 2% 5%;
+
+            @include flex(center) {
+                flex-direction: column;
+            }
+
+            .picture {
+                overflow: hidden;
+            }
+
+            .explain {
+                display: none;
+            }
+
+            .explain-p {
+                display: block;
+                margin: 4% 0;
+
+                :nth-child(1) {
+                    margin-bottom: 1.5%;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                }
+
+                :nth-child(2) {
+                    margin-bottom: 1.5%;
+                    color: #808080;
+                    font-size: 1rem;
+                }
+
+                :nth-child(3) {
+                    color: #808080;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        .art-2 {
+            padding: 6% 5%;
+
+            .subject {
+                font-size: 1.2rem;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .context {
+                display: none;
+            }
+
+            .context-p {
+                margin: 3% auto;
+
+                @include flex(inline-flex) {
+                    flex-direction: column;
+                }
+
+                figure {
+
+                    @include flex(space-between) {
+                        align-items: center;
+                        vertical-align: middle;
+                    }
+
+                    margin: 0.5% auto;
+
+                    div {
+                        img {
+                            width: 350px;
+                            height: 300px;
+
+                        }
+                    }
+
+                    figcaption {
+                        height: 300px;
+                        vertical-align: top;
+                        text-align: start;
+                        padding: 0 2%;
+
+                        .title {
+                            // margin: 1% auto;
+                            font-size: 1rem;
+                        }
+
+                        .desc {
+                            color: #808080;
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                }
+            }
+
+            .context-m {
+                display: none;
+            }
+        }
+    }
+}
